@@ -1,3 +1,5 @@
 
 # no follow
 src/wp-content/uploads/*
+src/wp-content/uploads/*.*
+
