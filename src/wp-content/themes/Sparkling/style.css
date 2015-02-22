@@ -443,7 +443,7 @@ hr.section-divider {
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-  display: none;
+  /*display: none;*/
 }
 
 /* =Media
@@ -1377,4 +1377,12 @@ button[type=submit],
 .no-js .postform,
 .no-js table#wp-calendar {
   display: block;
+}
+
+/**  Custom Anb  **/
+.thumbnail-tutsplus {
+    float: left;
+    border: 1px solid #dadada;
+    padding: 5px;
+    margin: 0 5px 0 0;
 }

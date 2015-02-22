@@ -6,9 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="blog-item-wrap">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-			 	<?php the_post_thumbnail( 'sparkling-featured', array( 'class' => 'single-featured' )); ?>
-			</a>
+            
 		<div class="post-inner-content">
 			<header class="entry-header page-header">
 
@@ -33,7 +31,13 @@
 			</div><!-- .entry-summary -->
 			<?php else : ?>
 			<div class="entry-content">
-
+                            <div class="thumbnail-tutsplus">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                        <?php echo get_the_post_thumbnail($post->ID, 'tutsplus'); ?>
+                                    </a>
+                                <?php endif; ?>            
+                            </div>  
 					<?php the_content(); ?>
 
 				<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e( 'Read More', 'sparkling' ); ?></a></p>
