@@ -1386,3 +1386,18 @@ button[type=submit],
     padding: 5px;
     margin: 0 5px 0 0;
 }
+
+.ico-seo-metadescription {
+    font-size: 25px;
+    
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);    
+}
+
+.text-seo-metadescription {
+    height: 1.8em;
+    color: #fff;
+    overflow: hidden;
+}

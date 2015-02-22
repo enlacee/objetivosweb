@@ -30,15 +30,15 @@
 				<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'sparkling' ); ?></a></p>
 			</div><!-- .entry-summary -->
 			<?php else : ?>
-			<div class="entry-content">
-                            <div class="thumbnail-tutsplus">
-                                <?php if (has_post_thumbnail()): ?>
-                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                        <?php echo get_the_post_thumbnail($post->ID, 'tutsplus'); ?>
-                                    </a>
-                                <?php endif; ?>            
-                            </div>  
-					<?php the_content(); ?>
+			<div class="entry-content">                            
+                <?php if (has_post_thumbnail()): ?>
+	                <div class="thumbnail-tutsplus">
+	                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+	                        <?php echo get_the_post_thumbnail($post->ID, 'tutsplus'); ?>
+	                    </a>
+	                </div>
+                <?php endif; ?>
+				<?php echo get_the_excerpt(''); //the_content(); ?>
 
 				<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php _e( 'Read More', 'sparkling' ); ?></a></p>
 
