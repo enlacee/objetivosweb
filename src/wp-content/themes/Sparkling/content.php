@@ -10,7 +10,7 @@
 		<div class="post-inner-content">
 			<header class="entry-header page-header">
 
-				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 				<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
@@ -26,8 +26,15 @@
 
 			<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-summary">
-				<?php the_excerpt(); ?>
-				<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'sparkling' ); ?></a></p>
+                <?php if (has_post_thumbnail()): ?>
+                    <div class="thumbnail-tutsplus">
+                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                            <?php echo get_the_post_thumbnail($post->ID, 'tutsplus'); ?>
+                        </a>
+                    </div>
+                <?php endif; ?>                
+				<?php the_excerpt(); ?>                
+				<p style="text-align: right;"><a class="btn btn-default read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'sparkling' ); ?></a></p>
 			</div><!-- .entry-summary -->
 			<?php else : ?>
 			<div class="entry-content">                            
